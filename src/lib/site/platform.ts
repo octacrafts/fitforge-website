@@ -13,6 +13,12 @@ export const PLATFORM_PAGE = {
     alt: "FitForge gym management dashboard on tablet",
     width: 696,
     height: 537,
+    screens: [
+      "/platform-dashboard.png",
+      "/platform-onboarding.png",
+      "/platform-classes.png",
+      "/ai-dashboard.png",
+    ],
   },
   onboarding: {
     id: "member-onboarding",

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { AI_WORKFLOWS_PAGE } from "@/lib/site-config";
 import DarkPageIntro from "@/components/ui/DarkPageIntro";
+import AiAutomationSection from "@/components/ai/AiAutomationSection";
+import AiWorkflowsSection from "@/components/ai/AiWorkflowsSection";
 import AiDashboardSection from "@/components/ai/AiDashboardSection";
 import AiChurnSection from "@/components/ai/AiChurnSection";
 import AiFeatureBlock from "@/components/ai/AiFeatureBlock";
@@ -19,6 +21,8 @@ export default function AiWorkflowsPage() {
         titleAccent={AI_WORKFLOWS_PAGE.intro.titleAccent}
         description={AI_WORKFLOWS_PAGE.intro.description}
       />
+      <AiAutomationSection />
+      <AiWorkflowsSection />
       <AiDashboardSection />
       <AiChurnSection />
       {AI_WORKFLOWS_PAGE.features.map((feature) => (
