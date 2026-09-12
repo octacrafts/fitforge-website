@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { FOOTER, NAV_LINKS } from "@/lib/site-config";
 import BrandLogo from "@/components/navbar/BrandLogo";
 import Reveal from "@/components/motion/Reveal";
+import { useTheme } from "@/components/theme/ThemeProvider";
 import {
   easeOut,
   staggerContainer,
@@ -28,6 +29,9 @@ export default function SimpleFooter({
   const dark = tone === "dark";
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
+  const { inverted } = useTheme();
+  // Invert flips section surfaces — logo must match visible bg, not static tone.
+  const surfaceIsDark = inverted ? !dark : dark;
 
   return (
     <footer
@@ -38,7 +42,7 @@ export default function SimpleFooter({
     >
       <Reveal variant="up" className="flex flex-col items-center">
         <BrandLogo
-          variant={dark ? "onDark" : "default"}
+          variant={surfaceIsDark ? "onDark" : "onLight"}
           className="inline-block text-[22px]"
         />
 

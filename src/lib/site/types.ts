@@ -70,6 +70,8 @@ export type ShowcaseImage = {
   alt: string;
   width: number;
   height: number;
+  /** Extra screens shown inside MacBook while scrolling */
+  screens?: readonly string[];
 };
 
 export type DarkPageIntroContent = PageIntroContent & {

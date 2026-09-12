@@ -176,8 +176,9 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* Native smooth scroll disabled — Lenis owns site-wide smooth scrolling */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

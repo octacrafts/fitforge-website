@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { AI_WORKFLOWS_PAGE } from "@/lib/site-config";
 import DarkPageIntro from "@/components/ui/DarkPageIntro";
+import AiGrowthSlider from "@/components/ai/AiGrowthSlider";
+import AiAutomationSection from "@/components/ai/AiAutomationSection";
+import AiWorkflowsSection from "@/components/ai/AiWorkflowsSection";
 import AiDashboardSection from "@/components/ai/AiDashboardSection";
 import AiChurnSection from "@/components/ai/AiChurnSection";
 import AiFeatureBlock from "@/components/ai/AiFeatureBlock";
@@ -20,6 +23,9 @@ export default function AiWorkflowsPage() {
         description={AI_WORKFLOWS_PAGE.intro.description}
       />
       <AiDashboardSection />
+      <AiGrowthSlider />
+      <AiAutomationSection />
+      <AiWorkflowsSection />
       <AiChurnSection />
       {AI_WORKFLOWS_PAGE.features.map((feature) => (
         <AiFeatureBlock key={feature.id} feature={feature} />

@@ -3,6 +3,44 @@ import type {
   ShowcaseImage,
 } from "@/lib/site/types";
 
+export type AiWorkflowTone = "orange" | "blue" | "green";
+
+export type AiWorkflowItem = {
+  id: string;
+  tone: AiWorkflowTone;
+  title: string;
+  description: string;
+  whyItMatters: string;
+  preview: {
+    kind: "churn" | "revenue" | "capacity";
+    label: string;
+    value: string;
+  };
+};
+
+export type AiAutomationTone = "orange" | "purple" | "teal";
+
+export type AiAutomationItem = {
+  id: string;
+  tone: AiAutomationTone;
+  title: string;
+  description: string;
+  whyItMatters: string;
+  preview: {
+    kind: "renewal" | "schedule" | "marketing";
+    label: string;
+    value: string;
+  };
+};
+
+export type AiGrowthSlide = {
+  id: string;
+  eyebrow: string;
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+};
+
 export const AI_WORKFLOWS_PAGE = {
   id: "ai-workflows",
   intro: {
@@ -11,6 +49,135 @@ export const AI_WORKFLOWS_PAGE = {
     titleAccent: "Growth Engine.",
     description:
       "FitForge AI doesn't just show you data—it takes action. Automate retention, marketing, and operations with integrated intelligence.",
+  },
+  slider: {
+    id: "ai-growth-engine",
+    slides: [
+      {
+        id: "growth-engine",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Your Personal",
+        titleAccent: "Growth Engine.",
+        description:
+          "FitForge AI doesn't just show you data—it takes action. Automate retention, marketing, and operations with integrated intelligence.",
+      },
+      {
+        id: "retention",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Retention That",
+        titleAccent: "Brings Members Back.",
+        description:
+          "AI identifies at-risk members and runs the follow-up for you—before they cancel.",
+      },
+      {
+        id: "marketing",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Marketing That",
+        titleAccent: "Finds More Leads.",
+        description:
+          "Campaigns, signups, and outreach run on member behavior—not guesswork.",
+      },
+    ] as const satisfies readonly AiGrowthSlide[],
+  },
+  workflows: {
+    id: "ai-workflow-cards",
+    eyebrow: "AI WORKFLOWS",
+    titleLead: "Know What's Coming,",
+    titleAccent: "Before It Happens",
+    description:
+      "Your data doesn't just sit on a dashboard — it warns you and plans ahead for you.",
+    items: [
+      {
+        id: "churn-prediction",
+        tone: "orange",
+        title: "Churn Prediction Alerts",
+        description:
+          "The system flags members who are likely to cancel — before they actually do — based on their attendance and activity patterns.",
+        whyItMatters:
+          "You can win members back instead of finding out they're gone after the fact.",
+        preview: {
+          kind: "churn",
+          label: "Risk of Churn",
+          value: "High",
+        },
+      },
+      {
+        id: "revenue-forecasting",
+        tone: "blue",
+        title: "Revenue Forecasting",
+        description:
+          "See where your revenue is heading next month, not just where it's been. Plan staffing, promotions, and expansion with real numbers.",
+        whyItMatters: "Fewer surprises, better long-term planning.",
+        preview: {
+          kind: "revenue",
+          label: "Next Month",
+          value: "$48,320",
+        },
+      },
+      {
+        id: "capacity-planning",
+        tone: "green",
+        title: "Capacity Planning Insights",
+        description:
+          "Get ahead of demand — know when classes, trainers, or branches are approaching capacity so you can plan before it becomes a bottleneck.",
+        whyItMatters: "Smarter growth decisions, no last-minute scrambling.",
+        preview: {
+          kind: "capacity",
+          label: "Near Capacity",
+          value: "85%",
+        },
+      },
+    ] as const satisfies readonly AiWorkflowItem[],
+  },
+  automation: {
+    id: "ai-automation-engine",
+    eyebrow: "AUTOMATION ENGINE",
+    titleLead: "Let the System Work",
+    titleAccent: "While You Run the Gym",
+    description:
+      "The busywork happens on its own — reminders, scheduling, and re-engagement, fully automated.",
+    items: [
+      {
+        id: "renewal-reminders",
+        tone: "orange",
+        title: "Automated Renewal & Expiry Reminders",
+        description:
+          "Membership expiry and renewal reminders go out on their own — no front-desk staff chasing members manually.",
+        whyItMatters: "Higher renewal rates, zero \"forgotten\" members.",
+        preview: {
+          kind: "renewal",
+          label: "Your membership expires in 3 days.",
+          value: "Reminder",
+        },
+      },
+      {
+        id: "smart-scheduling",
+        tone: "purple",
+        title: "Smart Class & Trainer Scheduling",
+        description:
+          "Sessions get assigned automatically based on trainer availability and class capacity, with waitlists handled without manual intervention.",
+        whyItMatters: "Higher class attendance, less admin chaos.",
+        preview: {
+          kind: "schedule",
+          label: "Auto Assigned",
+          value: "9:00 AM",
+        },
+      },
+      {
+        id: "behavior-marketing",
+        tone: "teal",
+        title: "Behavior-Based Marketing Automation",
+        description:
+          "SMS, email, and push notifications trigger automatically based on member behavior and segments — re-engaging inactive members without you lifting a finger.",
+        whyItMatters:
+          "Reactivates dormant members and lowers your marketing spend.",
+        preview: {
+          kind: "marketing",
+          label: "We miss you! Come back & get 10% off.",
+          value: "Campaign",
+        },
+      },
+    ] as const satisfies readonly AiAutomationItem[],
   },
   showcase: {
     src: "/ai-dashboard.png",
@@ -52,6 +219,26 @@ export const AI_WORKFLOWS_PAGE = {
 } as const satisfies {
   id: string;
   intro: DarkPageIntroContent;
+  slider: {
+    id: string;
+    slides: readonly AiGrowthSlide[];
+  };
+  workflows: {
+    id: string;
+    eyebrow: string;
+    titleLead: string;
+    titleAccent: string;
+    description: string;
+    items: readonly AiWorkflowItem[];
+  };
+  automation: {
+    id: string;
+    eyebrow: string;
+    titleLead: string;
+    titleAccent: string;
+    description: string;
+    items: readonly AiAutomationItem[];
+  };
   showcase: ShowcaseImage;
   churn: {
     id: string;
