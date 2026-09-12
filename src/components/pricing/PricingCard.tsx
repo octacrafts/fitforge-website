@@ -66,13 +66,15 @@ export default function PricingCard({ plan }: PricingCardProps) {
         ))}
       </ul>
 
-      <Button
-        href={CTA.href}
-        variant={featured ? "primary" : "secondary"}
-        className="mt-auto w-full px-6 py-3.5 pt-8"
-      >
-        {plan.ctaLabel}
-      </Button>
+      <div className="mt-auto pt-8">
+        <Button
+          href={CTA.href}
+          variant={featured ? "primary" : "secondary"}
+          className="flex w-full px-6 py-3.5"
+        >
+          {plan.ctaLabel}
+        </Button>
+      </div>
     </motion.article>
   );
 }

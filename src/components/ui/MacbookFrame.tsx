@@ -42,7 +42,10 @@ export default function MacbookFrame({
       >
         {/* Screen content — stacked images, scroll moves the stack */}
         <div className="absolute inset-0 m-[4.3%_3.2%] overflow-hidden bg-[#333]">
-          <motion.div className="absolute inset-0" style={{ y: screenY }}>
+          <motion.div
+            className="absolute inset-0 will-change-transform"
+            style={{ y: screenY }}
+          >
             {images.map((imageSrc, index) => (
               <div
                 key={`${imageSrc}-${index}`}

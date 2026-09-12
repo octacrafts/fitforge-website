@@ -39,7 +39,7 @@ export default function PillEyebrow({
 
   const pill = (
     <motion.p
-      className={`inline-flex items-center gap-2 rounded-full border border-brand bg-card-dark px-4 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-brand ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full border border-brand bg-card px-4 py-1.5 text-[11px] font-semibold tracking-[0.14em] text-brand ${className}`}
       variants={pillMotion}
       transition={{ ...transitionBase, duration: 0.45 }}
       {...motionProps}

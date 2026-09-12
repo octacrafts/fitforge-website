@@ -21,7 +21,7 @@ export default function AiAutomationCard({
   const theme = AI_AUTOMATION_TONE[tone];
 
   return (
-    <article className="flex h-full flex-col rounded-[24px] border border-card-line bg-card-dark p-6 shadow-[var(--shadow-card)] sm:p-7">
+    <article className="flex h-full flex-col rounded-[24px] border border-card-line bg-card p-6 shadow-[var(--shadow-card)] sm:p-7">
       <div className="flex items-start justify-between gap-3">
         <span
           className={`flex h-11 w-11 items-center justify-center rounded-xl border ${theme.border} ${theme.soft}`}
@@ -32,17 +32,17 @@ export default function AiAutomationCard({
       </div>
 
       <h3 className="mt-6 text-xl font-bold tracking-tight text-ink">{title}</h3>
-      <p className="mt-3 text-[15px] leading-7 text-on-dark">{description}</p>
+      <p className="mt-3 text-[15px] leading-7 text-muted">{description}</p>
 
       <div
-        className={`mt-auto flex items-start gap-3 rounded-2xl border-l-2 bg-ink-dark p-4 ${theme.whyBorder}`}
+        className={`mt-auto flex items-start gap-3 rounded-2xl border-l-2 bg-surface p-4 ${theme.whyBorder}`}
       >
         <span
           className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${theme.border} ${theme.soft}`}
         >
           <AiAutomationWhyIcon tone={tone} />
         </span>
-        <p className="text-[14px] leading-6 text-on-dark">
+        <p className="text-[14px] leading-6 text-muted">
           <span className={`font-semibold ${theme.accent}`}>Why it matters: </span>
           {whyItMatters}
         </p>

@@ -33,6 +33,14 @@ export type AiAutomationItem = {
   };
 };
 
+export type AiGrowthSlide = {
+  id: string;
+  eyebrow: string;
+  titleLead: string;
+  titleAccent: string;
+  description: string;
+};
+
 export const AI_WORKFLOWS_PAGE = {
   id: "ai-workflows",
   intro: {
@@ -41,6 +49,35 @@ export const AI_WORKFLOWS_PAGE = {
     titleAccent: "Growth Engine.",
     description:
       "FitForge AI doesn't just show you data—it takes action. Automate retention, marketing, and operations with integrated intelligence.",
+  },
+  slider: {
+    id: "ai-growth-engine",
+    slides: [
+      {
+        id: "growth-engine",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Your Personal",
+        titleAccent: "Growth Engine.",
+        description:
+          "FitForge AI doesn't just show you data—it takes action. Automate retention, marketing, and operations with integrated intelligence.",
+      },
+      {
+        id: "retention",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Retention That",
+        titleAccent: "Brings Members Back.",
+        description:
+          "AI identifies at-risk members and runs the follow-up for you—before they cancel.",
+      },
+      {
+        id: "marketing",
+        eyebrow: "Intelligence Unleashed",
+        titleLead: "Marketing That",
+        titleAccent: "Finds More Leads.",
+        description:
+          "Campaigns, signups, and outreach run on member behavior—not guesswork.",
+      },
+    ] as const satisfies readonly AiGrowthSlide[],
   },
   workflows: {
     id: "ai-workflow-cards",
@@ -182,6 +219,10 @@ export const AI_WORKFLOWS_PAGE = {
 } as const satisfies {
   id: string;
   intro: DarkPageIntroContent;
+  slider: {
+    id: string;
+    slides: readonly AiGrowthSlide[];
+  };
   workflows: {
     id: string;
     eyebrow: string;

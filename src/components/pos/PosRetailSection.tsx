@@ -13,8 +13,8 @@ export default function PosRetailSection() {
   return (
     <section
       id={retail.id}
-      data-theme="dark"
-      className="relative scroll-mt-24 overflow-hidden bg-ink-alt px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
+      data-theme="light"
+      className="relative scroll-mt-24 overflow-hidden bg-background px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
     >
       <div
         className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-brand/15 blur-3xl"
@@ -33,7 +33,7 @@ export default function PosRetailSection() {
             {retail.titleLead}{" "}
             <span className="text-brand">{retail.titleAccent}</span>
           </h2>
-          <p className="mt-4 text-base leading-7 text-on-dark sm:text-lg">
+          <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
             {retail.description}
           </p>
         </Reveal>

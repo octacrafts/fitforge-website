@@ -17,7 +17,7 @@ export default function AiAutomationSection() {
       className="relative scroll-mt-24 overflow-hidden bg-ink-alt px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
     >
       <div
-        className="pointer-events-none absolute left-1/2 top-8 h-40 w-[28rem] -translate-x-1/2 rounded-full bg-[#5B8CFF]/15 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-8 h-40 w-[28rem] -translate-x-1/2 rounded-full bg-brand/15 blur-3xl"
         aria-hidden
       />
 
@@ -32,7 +32,7 @@ export default function AiAutomationSection() {
             {automation.titleLead} {automation.titleAccent}
           </h2>
 
-          <p className="mt-4 text-base leading-7 text-on-dark sm:text-lg">
+          <p className="mt-4 text-base leading-7 text-muted sm:text-lg">
             {automation.description}
           </p>
         </Reveal>

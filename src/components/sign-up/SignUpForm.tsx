@@ -17,7 +17,7 @@ export default function SignUpForm() {
 
   return (
     <motion.form
-      className="mt-8 space-y-5"
+      className="mt-5 space-y-3 sm:mt-8 sm:space-y-5"
       variants={reduceMotion ? undefined : staggerContainer}
       initial={reduceMotion ? false : "hidden"}
       whileInView={reduceMotion ? undefined : "visible"}
